@@ -1,0 +1,81 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: #2980b9;
+	height: 100vh;
+	/* 将对象作为弹性伸缩盒显示 */
+	display: flex;
+	/* 定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式 */
+	align-items: center;
+	/* 检索弹性盒子元素在主轴上的对齐方式 */
+	justify-content: center;
+	font-family: "arial, helvetica, sans-serif";
+}
+
+.loading{
+	width: 200px;
+	height: 200px;
+	/* 令浏览器呈现出带有指定宽度和高度的框，并把边框和内边距放入框中 */
+	box-sizing: border-box;
+	/* 设置圆角 */
+	border-radius: 50%;
+	border-top: 10px #f1c40f solid;
+	/* 开启相对定位 */
+	position: relative;
+	/* 动画设置 */
+	animation: a1 2s linear infinite;
+}
+
+.loading::before,.loading::after{
+	content: '';
+	width: 200px;
+	height: 200px;
+	/* background: red; */
+	/* 开启绝对定位 */
+	position: absolute;
+	left: 0;
+	top: -10px;
+	box-sizing: border-box;
+	border-radius: 50%;
+}
+
+.loading::before{
+	border-top: 10px solid #e67e22;
+	/* 定义2D旋转 */
+	transform: rotate(120deg);
+}
+
+.loading::after{
+	border-top: 10px solid #e74c3c;
+	/* 定义2D旋转 */
+	transform: rotate(240deg);
+}
+
+/* 设置loading的位置颜色等 */
+.loading span{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	color: #fff;
+	text-align: center;
+	line-height: 200px;
+	animation: a2 2s linear infinite;
+}
+
+@keyframes a1{
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes a2{
+	to{
+		transform: rotate(-360deg);
+	}
+}
+
+
+
+
+
+

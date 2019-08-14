@@ -1,0 +1,74 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "montserrat",sans-serif;
+	/* 设置宽高包含边框和边距 */
+	box-sizing: border-box;
+}
+
+body{
+	background-image: linear-gradient(120deg,#7ed6df,#f0932b);
+	/* 100vh==100%，100vh没有内容也会撑开 */
+	min-height: 100vh;
+}
+
+.container{
+	max-width: 800px;
+	margin: auto;
+	padding: 10px;
+}
+
+.txtb{
+	width: 100%;
+	border: none;
+	border-bottom: 2px solid #000;
+	background: none;
+	padding: 10px;
+	/* 轮廓置为空 */
+	outline: none;
+	font-size: 18px;
+}
+
+h3{
+	margin: 10px 0;
+}
+
+.task{
+	width: 100%;
+	/* 设置不透明 */
+	background: rgba(255,255,255,0.5);
+	padding: 18px;
+	margin: 6px 0;
+	/* 溢出内容会被修剪 */
+	overflow: hidden;
+}
+
+.task i{
+	/* 设置小按钮右浮动 */
+	float: right;
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.comp .task{
+	/* 设置完成计划下面的样式 */
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

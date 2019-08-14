@@ -1,0 +1,65 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: #2980b9;
+}
+
+/* 开启绝对定位设置居中 */
+.middle{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.sm-container{
+	text-align: center;
+}
+
+.sm-container i{
+	color: #fff;
+	padding: 20px;
+	font-size: 20px;
+	/* 设置移入指针特性 */
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+.sm-container i:hover{
+	/* 指针移入放大1.5倍 */
+	transform: scale(1.5);
+}
+
+.sm-menu{
+	background: #34495e;
+	position: absolute;
+	border-radius: 10px;
+	display: none;
+}
+
+/* 制作菜单栏上面的小三角 */
+.sm-menu::before{
+	content: "";
+	width: 10px;
+	height: 10px;
+	background: #34495e;
+	position: absolute;
+	top: -5px;
+	left: 50%;
+	transform: translatex(-50%) rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

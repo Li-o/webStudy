@@ -1,0 +1,72 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: "arial, helvetica, sans-serif";
+	background: #000;
+}
+
+.middle{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.text{
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 60px;
+	text-align: center;
+	letter-spacing: 12px;
+}
+
+.text::before,.text::after{
+	/* 如果你不想把content内容在CSS里写死，那你可以使用attr表达式来从页面元素中动态的获取内容。
+	   attr属性通常和自定义属性data-配合使用，因为传统的其它属性虽然也能存值，但通常不适合存放
+	   表达性文字。*/
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.text::before{
+	color: aqua;
+	animation: text-effect 3s infinite;
+}
+
+.text::after{
+	color: deeppink;
+	animation: text-effect 2s infinite;
+}
+
+@keyframes text-effect{
+	0%{
+		left: -2px;
+		top: -2px;
+	}
+	25%{
+		left: 2px;
+		top: 0px;		
+	}
+	50%{
+		left: -1px;
+		top: 2px;		
+	}
+	75%{
+		left: 1px;
+		top: -1px;		
+	}
+	100%{
+		left: 0px;
+		top: -2px;		
+	}
+}
+
+
+
+
+

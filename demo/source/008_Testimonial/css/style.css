@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;	
+}
+
+.testimonial-section{
+	/* height: 100vh;  全屏背景*/
+    padding: 40px 0;
+	background: #1abc9c;
+}
+
+.inner-width{
+    /* 设置段落的最大宽度 */
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.testimonial-section h1{
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+}
+
+.border{
+    width: 100px;
+    height: 3px;
+    background: #fff;
+    margin: 40px auto;
+}
+
+.testimonial{
+	background: #f1f1f1;
+	padding: 40px;
+	overflow: hidden;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.test-info{
+	display: flex;
+	height: 60px;
+	/* 定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式 */
+	align-items: center;
+}
+
+.test-pic{
+	width: 50px !important;
+	border-radius: 50%;
+	margin-right: 15px;
+}
+
+.test-name{
+	font-size: 12px;
+	color: #1ABC9C;
+}
+
+.test-name span{
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+	color: #1abc9c;
+}
+
+.testimonial p{
+	font-size: 12px;
+	line-height: 22px;
+	margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- width:可视区域的宽度，值可为数字或关键词device-width, intial-scale:页面首次被显示是可视区域的缩放级别，取值1.0则页面按实际尺寸显示，无任何缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</head>
+<body>
+    
+    <div class="testimonial-section">
+        <div class="inner-width">
+            <h1>What Client Says ?</h1>
+            <div class="border"></div>
+
+                <div class="slides owl-carousel">
+
+                    <div class="testimonial">
+                        <div class="test-info">
+                            <img class="test-pic" src="img/1.jpg" alt="">
+                            <div class="test-name">
+                                <span>Client1</span>
+                                @client1
+                            </div>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, minima. Voluptatem rem illo dolore amet voluptatum! Nisi earum architecto obcaecati iste. Omnis, laborum blanditiis! Voluptates fugiat optio eaque neque provident.
+                        </p>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="test-info">
+                            <img class="test-pic" src="img/2.jpg" alt="">
+                            <div class="test-name">
+                                <span>Client2</span>
+                                @client2
+                            </div>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, minima. Voluptatem rem illo dolore amet voluptatum! Nisi earum architecto obcaecati iste. Omnis, laborum blanditiis! Voluptates fugiat optio eaque neque provident.
+                        </p>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="test-info">
+                            <img class="test-pic" src="img/3.jpg" alt="">
+                            <div class="test-name">
+                                <span>Client3</span>
+                                @client4                                   
+                            </div>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, minima. Voluptatem rem illo dolore amet voluptatum! Nisi earum architecto obcaecati iste. Omnis, laborum blanditiis! Voluptates fugiat optio eaque neque provident.
+                        </p>
+                    </div>
+					
+                </div>
+        </div>
+    </div>
+	
+	<script>
+		$(".owl-carousel").owlCarousel({
+			margin: 10,
+			responsiveClass: true,
+			responsive:{
+				0: {
+					items:1
+				},
+				680: {
+					items:2
+				},
+				960: {
+					items:3
+				},
+			}
+		});
+	</script>
+
+
+
+</body>
+</html>

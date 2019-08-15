@@ -1,0 +1,93 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "arial, helvetica, sans-serif";
+	/*   指定宽度和高度（最小/最大属性）确定元素边框。也就是说，对元素指定
+	宽度和高度包括了 padding 和 border 。通过从已设定的宽度和高度分别减
+	去边框和内边距才能得到内容的宽度和高度。  */
+	box-sizing: border-box;
+}
+
+.gallery-section{
+	width: 100%;
+	padding: 60px 0;
+	background: #f1f1f1;
+}
+
+.inner-width{
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 0 20px;
+}
+
+.gallery-section h1{
+	text-align: center;
+	text-transform: uppercase;
+	color: #333;
+}
+
+.border{
+	width: 180px;
+	height: 4px;
+	background: #333;
+	margin: 60px auto;
+}
+
+.gallery-section .gallery{
+	display: flex;
+	/* lex-wrap 属性规定flex容器是单行或者多行，同时横轴的方向决定了新行堆叠的方向
+	   wrap-reverse:规定灵活的项目在必要的时候拆行或拆列，但是以相反的顺序*/
+	flex-wrap: wrap-reverse;
+	justify-content: center;
+}
+
+.gallery-section .image{
+	flex: 25%;
+	/* hidden内容会被修剪，并且其余内容是不可见的 */
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.gallery-section .image img{
+	width: 100%;
+	height: 100%;
+	transition: 0.4s;
+}
+
+.gallery-section .image:hover img{
+	/* 旋转:rotate,缩放:scale,倾斜:skew,移动:translate */
+	transform: scale(1.4) rotate(15deg);
+}
+
+/* 利用@media screen实现网页布局的自适应
+   优点:无需插件和手机主题,对移动设备友好,
+   能够适应各种窗口大小,根据浏览器宽度判断
+   并输出不同的长宽值*/
+@media screen and (max-width:960px) {
+	.gallery-section .image{
+		flex: 33.33%;
+	}
+}
+
+@media screen and (max-width:768px) {
+	.gallery-section .image{
+		flex: 50%;
+	}
+}
+
+@media screen and (max-width:480px) {
+	.gallery-section .image{
+		flex: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+
+

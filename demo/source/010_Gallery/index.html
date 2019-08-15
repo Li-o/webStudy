@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+		<!-- width:可视区域的宽度，值可为数字或关键词device-width, intial-scale:页面首次被显示是可视区域的缩放级别，取值1.0则页面按实际尺寸显示，无任何缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		
+		<div class="gallery-section">
+			<div class="inner-width">
+				<h1>Gallery</h1>
+				<div class="border"></div>
+				<div class="gallery">
+					
+					<a href="img/pic1.jpg" class="image">
+						<img src="img/pic1.jpg"  alt="">
+					</a>
+					
+					<a href="img/pic2.jpg" class="image">
+						<img src="img/pic2.jpg"  alt="">
+					</a>
+					
+					<a href="img/pic3.jpg" class="image">
+						<img src="img/pic3.jpg"  alt="">
+					</a>
+					
+					<a href="img/pic4.jpg" class="image">
+						<img src="img/pic4.jpg"  alt="">
+					</a>
+					
+					<a href="img/pic5.jpg" class="image">
+						<img src="img/pic5.jpg"  alt="">
+					</a>
+					
+					<a href="img/pic6.jpg" class="image">
+						<img src="img/pic6.jpg"  alt="">
+					</a>
+					
+					<a href="img/pic7.jpg" class="image">
+						<img src="img/pic7.jpg"  alt="">
+					</a>
+					
+					<a href="img/pic8.jpg" class="image">
+						<img src="img/pic8.jpg"  alt="">
+					</a>
+					
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$(".gallery").magnificPopup({
+				delegate: 'a',
+				type: 'image',
+				gellery:{
+					enabled: true,
+					navigateByImgClick: true,
+				}
+			});
+		</script>
+		
+	</body>
+</html>

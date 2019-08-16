@@ -1,0 +1,54 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.loading-screen{
+	width: 100%;
+	height: 100vh;
+	background: #2980B9;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+}
+
+.loading-screen::before{
+	content: "";
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	background: #FF1493;
+	left: 20%;
+	/* 旋转:rotate,缩放:scale,倾斜:skew,移动:translate */
+	transform: translateX(-50%) rotate(0);
+	border-radius: 25px;
+	/* infinite	规定动画应该无限次播放。
+	   linear 直线*/
+	animation: loading 4s infinite linear;
+}
+
+@keyframes loading{
+	from{
+		transform: translate(-50%) rotate(0deg);
+	}
+	
+	50%{
+		left: 80%;
+	}
+	
+	to{
+		transform: translateX(-50%) rotate(1440deg);
+	}
+}
+
+
+
+
+
+
+
+
+

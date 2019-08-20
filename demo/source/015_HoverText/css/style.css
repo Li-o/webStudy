@@ -1,0 +1,53 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: #00FFFF;
+}
+
+.middle{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	/* 水平居中 */
+	display: flex;
+	justify-content: center;
+}
+
+.text{
+	color: #000;
+	font-size: 70px;
+	font-family: "montserrat";
+	font-weight: 900;
+	cursor: pointer;
+}
+
+.hidden{
+	max-width: 0;
+	/* 设置 div 元素的不透明级别 */
+	opacity: 0;
+	/* 规定以慢速开始的过渡效果 */
+	transition: 0.5s ease-in;
+}
+
+.text:hover .hidden{
+	opacity: 1;
+	max-width: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

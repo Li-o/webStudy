@@ -1,0 +1,79 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #c8d6e5;
+}
+.signup-form{
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    background: url(/demo/source/018_SignUp/img/image.jpg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+}
+.signup-form h1{
+    margin-top: 100px;
+    font-family: 'Permanent Market', cursive;
+    color: #fff;
+    font-size: 40px;
+}
+.signup-form input{
+    display: block;
+    width: 100%;
+    padding-left:0 16px;
+    height: 44px;
+    text-align: center;
+    /* 为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制 */
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: 'Permanent Market', cursive;
+}
+.txtb{
+    margin: 15px 0;
+    /* 设置透明效果 */
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+}
+.signup-btn{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 25px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.signup-btn:hover{
+    background: #ddd;
+    color: #000;
+    transform: scale(0.9);
+}
+.signup-form a{
+    color: #ddd;
+    font-size: 15px;
+    text-decoration: none;
+    font-family: 'Permanent Market', cursive;
+    padding: 10px;
+    transition: 0.8s;
+    border-radius: 15px;
+    display: block;
+}
+.signup-form a:hover{
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+

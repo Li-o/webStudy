@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #130f40;
+}
+
+.conatiner{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    /* rotateX(angle)定义沿着X轴的3D旋转 */
+    transform: translate(-60%,-50%) rotateX(70deg);
+}
+
+.ripple{
+    position: fixed;
+    top: 0;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: ripple 4s linear infinite;
+}
+
+.r2{
+    /* 定义动画开始前等待的时间，以秒或毫秒计。 */
+    animation-delay: 0.8s;
+}
+.r3{
+    animation-delay: 1.6s;
+}
+.r4{
+    animation-delay: 2.4s;
+}
+.r5{
+    animation-delay: 3.2s;
+}
+.r6{
+    animation-delay: 4.0s;
+}
+
+@keyframes ripple {
+    from{
+        border: 4px solid #dfe6e9;
+        background: #b2bec3;
+    }
+    to{
+        border: 0px solid #dfe6e9;
+        background: #b2bec3;
+        width: 400px;
+        height: 400px;
+        top: 20px;
+        opacity: 0;
+    }
+
+}

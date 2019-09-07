@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #f1f1f1;
+}
+
+.middle{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn{
+    width: 220px;
+    height: 50px;
+    background: #9b59b6;
+    color: #fff;
+    margin: 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    /* 让转换的子元素保留3D转换 */
+    transform-style: preserve-3d;
+    /* 是设置这个属性后，那么，就可以模拟出像我们人看电脑上的显示的元素一样。比如说:perspective：800px   
+    意思就是，我在离屏幕800px 的地方观看这个元素。(这个属性，要设置在父元素上面) */
+    perspective: 800px;
+}
+.btn::after{
+    content: "";
+    position: absolute;
+    background: #8e44ad;
+    transition: 0.4s;
+}
+.btn1:hover{
+    /* 通过transform，可以让元素进行移动（translate）、旋转（rotate）、缩放（scale）、倾斜（skew） */
+    transform: rotateX(-20deg);
+}
+.btn1::after{
+    width: 100%;
+    height: 24px;
+    top: -24px;
+    left: 0;
+    /* 设置旋转元素的基点位置 */
+    transform-origin: 0 100%;
+    transform: rotateX(90deg);
+}
+
+.btn2:hover{
+    /* 通过transform，可以让元素进行移动（translate）、旋转（rotate）、缩放（scale）、倾斜（skew） */
+    transform: rotateX(20deg);
+}
+.btn2::after{
+    width: 100%;
+    height: 24px;
+    top: 100%;
+    left: 0;
+    /* 设置旋转元素的基点位置 */
+    transform-origin: 0 0;
+    transform: rotateX(-90deg);
+}
+
+.btn3:hover{
+    /* 通过transform，可以让元素进行移动（translate）、旋转（rotate）、缩放（scale）、倾斜（skew） */
+    transform: rotateY(20deg);
+}
+.btn3::after{
+    width: 30px;
+    height: 100%;
+    top: 0;
+    left: -30px;
+    /* 设置旋转元素的基点位置 */
+    transform-origin: 100% 0;
+    transform: rotateY(-90deg);
+}
+
+.btn4:hover{
+    /* 通过transform，可以让元素进行移动（translate）、旋转（rotate）、缩放（scale）、倾斜（skew） */
+    transform: rotateY(-20deg);
+}
+.btn4::after{
+    width: 30px;
+    height: 100%;
+    top: 0;
+    left: 100%;
+    /* 设置旋转元素的基点位置 */
+    transform-origin: 0 0;
+    transform: rotateY(90deg);
+}
+
+
+

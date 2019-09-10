@@ -1,0 +1,95 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.page{
+    background: #f1f1f1;
+    display: flex;
+    //溢出换行
+    flex-wrap: wrap;
+}
+//两个块的布局
+.col{
+    flex:1;
+    height: 100vh;
+    position: relative;
+}
+//设置左半部分的背景图
+.countdown-col{
+    background: url(/demo/source/028_ResponsivePage/img/bg.jpg) no-repeat center;
+    background-size: cover;
+}
+//设置时间的样式
+.time{
+    color: #fff;
+    text-transform: uppercase;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+//设置内容的位置
+.middle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+//设置时间字体的间距
+.time span{
+    padding: 0 14px;
+    font-size: 10px;
+}
+//设置时间字体的大小
+.time span div{
+    font-size: 40px;
+}
+
+//设置右边部分，内容区宽度占块宽度的比列
+.newseltter{
+    width: 90%;
+}
+//设置h4标题的样式
+.newseltter h4{
+    //浏览器会显示一个斜体的字体样式
+    font-style: italic;
+    font-size: 12px;
+}
+//设置表单的样式
+.newseltter input{
+    display: block;
+    margin: 12px auto;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+//设置按钮样式
+.newseltter-btn{
+    background: linear-gradient(120deg,#3498db,#ecf0f1,#95a5a6);
+    color: #000;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.newseltter-btn:hover{
+    opacity: 0.6;
+}
+//设置当屏幕小于900px时的排版
+@media screen and(max-width : 900px){
+    .col{
+        flex: 100%;
+    }
+}
+
+
+
+
+
+
+

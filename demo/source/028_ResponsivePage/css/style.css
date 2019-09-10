@@ -1,0 +1,74 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.page {
+  background: #f1f1f1;
+  display: flex;
+  flex-wrap: wrap;
+}
+.col {
+  flex: 1;
+  height: 100vh;
+  position: relative;
+}
+.countdown-col {
+  background: url(/demo/source/028_ResponsivePage/img/bg.jpg) no-repeat center;
+  background-size: cover;
+}
+.time {
+  color: #fff;
+  text-transform: uppercase;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.time span {
+  padding: 0 14px;
+  font-size: 10px;
+}
+.time span div {
+  font-size: 40px;
+}
+.newseltter {
+  width: 90%;
+}
+.newseltter h4 {
+  font-style: italic;
+  font-size: 12px;
+}
+.newseltter input {
+  display: block;
+  margin: 12px auto;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+.newseltter-btn {
+  background: linear-gradient(120deg, #3498db, #ecf0f1, #95a5a6);
+  color: #000;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.newseltter-btn:hover {
+  opacity: 0.6;
+}
+@media screen and (max-width: 900px) {
+  .col {
+    flex: 100%;
+  }
+}

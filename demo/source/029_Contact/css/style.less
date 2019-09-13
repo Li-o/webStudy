@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-section{
+    background: url(/demo/source/029_Contact/img/bg.jpg) no-repeat center;
+    // 把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。
+    background-size: cover;
+    padding: 40px 0;
+}
+
+//设置标题样式
+.contact-section h1{
+    text-align: center;
+    color: #fff;
+}
+
+//设置标题下面的小方块
+.border{
+    width: 100px;
+    height: 10px;
+    // background: #2c3e50;
+    background: #fff;
+    margin: 40px auto;
+}
+
+//设置表单总体大小
+.contact-form{
+    max-width: 600px;
+    margin: auto;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+//设置表单样式
+.contact-form-text{
+    display: block;
+    width: 100%;
+    //为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制
+    box-sizing: border-box;
+    margin: 16px 0;
+    border: 0;
+    background: #fff;
+    padding: 20px 40px;
+    outline: none;
+    color: #000;
+    transition: 0.5s;
+}
+
+.contact-form-text:focus{
+    box-shadow: 0 0 10px 4px #eee;
+}
+
+//设置最后一个文本框
+textarea.contact-form-text{
+    //用户无法调整元素的尺寸
+    resize: none;
+    height: 120px;
+}
+
+//设置提交按钮
+.contact-form-btn{
+    float: right;
+    border: 0;
+    background: #fff;
+    color: #000;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.contact-form-btn:hover{
+    background: #ddd;
+}

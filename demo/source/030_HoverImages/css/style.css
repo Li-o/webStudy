@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  background: #333;
+}
+.content {
+  text-align: center;
+  margin-top: 100px;
+}
+.img {
+  width: 240px;
+  height: 400px;
+  background-size: cover;
+  background-position: left;
+  display: inline-block;
+  margin: 10px;
+  background-repeat: no-repeat;
+  transition: 2s;
+}
+.img:hover {
+  background-position: center;
+}
+.img1 {
+  background-image: url(/demo/source/030_HoverImages/img/1.jpg);
+}
+.img2 {
+  background-image: url(/demo/source/030_HoverImages/img/2.jpg);
+}
+.img3 {
+  background-image: url(/demo/source/030_HoverImages/img/3.jpg);
+}

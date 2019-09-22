@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表</title>
+</head>
+<style type="text/css">
+*{
+    margin: 0;
+    padding: 0;
+    background: #444;
+}
+#test{
+    background: #fff;
+    position: absolute;
+    /* left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%); */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+</style>
+
+<script type="text/javascript">
+    window.onload = function(){
+        var cas = document.getElementById("test");
+        if(cas.getContext){
+            var pen = cas.getContext("2d");
+        }
+        setInterval(function(){
+            pen.clearRect(0,0,cas.width,cas.height);
+            time();
+        },1000)
+        function time(){
+
+            pen.save();
+            pen.lineWidth = 4;
+            pen.lineCap = "round";
+            pen.translate(200,200);
+            pen.rotate(-90*Math.PI/180);
+            pen.beginPath();
+            
+            //表盘
+            pen.save();
+            pen.arc(0,0,120,0,360*Math.PI/180);
+            pen.stroke();        
+            pen.restore();
+            
+            //时针
+            pen.save();
+            pen.strokeStyle = "#2ecc71";
+            for(var i=0 ; i<12 ; i++ ){
+                pen.rotate(30*Math.PI/180);
+                pen.beginPath();
+                pen.moveTo(100,0)
+                pen.lineTo(110,0);
+                pen.stroke();
+            }
+            pen.restore();
+
+            //分针
+            pen.save();
+            pen.strokeStyle = "#e74c3c";
+            for(var i=0 ; i<60 ; i++ ){
+                //去除时针和分钟重复的画分钟
+                if(i%5 != 0){
+                    pen.beginPath();
+                    pen.moveTo(105,0)
+                    pen.lineTo(110,0);
+                    pen.stroke();
+                }
+                pen.rotate(6*Math.PI/180);
+            }
+            pen.restore();
+
+            var date = new Date();
+            var s = date.getSeconds();
+            var m = date.getMinutes() + s/60;
+            var h = date.getHours() + m/60;
+            h = h>12?h-12:h;
+            //时针
+            pen.save();
+            pen.lineWidth = 8;
+            pen.rotate(h*30*Math.PI/180);
+            pen.beginPath();
+            pen.moveTo(-20,0);
+            pen.lineTo(50,0);
+            pen.stroke();
+            pen.restore();
+            //分针
+            pen.save();
+            pen.lineWidth = 6;
+            pen.rotate(m*6*Math.PI/180);
+            pen.beginPath();
+            pen.moveTo(-25,0);
+            pen.lineTo(60,0);
+            pen.stroke();
+            pen.restore();
+            //秒针
+            pen.save();
+            pen.lineWidth = 2;
+            pen.rotate(s*6*Math.PI/180);
+            pen.beginPath();
+            pen.moveTo(-30,0);
+            pen.lineTo(72,0);
+            pen.stroke();
+                //表座
+                pen.save();
+                pen.fillStyle = "#e74c3c";
+                pen.beginPath();
+                pen.arc(0,0,12,0,360*Math.PI/180);
+                pen.fill();
+                pen.restore();
+
+                pen.save();
+                pen.fillStyle = "#2ecc71";
+                pen.beginPath();
+                pen.arc(0,0,6,0,360*Math.PI/180);
+                pen.fill();
+                pen.restore();
+                //秒针头
+                pen.save();
+                pen.strokeStyle = "#2ecc71";
+                pen.beginPath();
+                pen.arc(80,0,8,0,360*Math.PI/180);
+                pen.stroke();
+                pen.restore();
+                
+            pen.restore();
+
+            pen.restore();
+
+        }
+
+    }
+</script>
+<body>
+    <canvas id="test" width="400px" height="400px"></canvas>
+</body>
+</html>

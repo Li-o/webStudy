@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>像素操作</title>
+</head>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+        background: #f1f1f1;
+    }
+    #test{
+        background: #fff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+</style>
+<script type="text/javascript">
+    window.onload = function(){
+
+        var cas = document.getElementById("test");
+        if(cas.getContext){
+            var pen = cas.getContext("2d");
+        }
+
+        pen.save();
+        pen.fillStyle = "#c0392b";
+        pen.beginPath();
+        pen.fillRect(100,100,100,100);
+        pen.restore();
+
+        var imgdata = pen.getImageData(0,0,cas.width,cas.height);
+
+        for(var i=0;i<imgdata.width;i++){
+            setPxInfo(imgdata,i,i,[192,57,43,255]);
+            var a = getPxInfo(imgdata,150,150);
+        }
+        console.log(a);
+        pen.putImageData(imgdata,0,0);
+
+        //获取像素的颜色
+        function getPxInfo(imgdata,x,y){
+            var color = [];
+            var data = imgdata.data;
+            var h = imgdata.height;
+            var w = imgdata.width;
+            //r
+            color[0] = data[(y*w+x)*4];
+            //g
+            color[1] = data[(y*w+x)*4+1];
+            //b
+            color[2] = data[(y*w+x)*4+2];
+            //a
+            color[3] = data[(y*w+x)*4+3];
+            return color;
+        }
+        //修改某个位置像素颜色
+        function setPxInfo(imgdata,x,y,color){
+        
+            var data = imgdata.data;
+            var h = imgdata.height;
+            var w = imgdata.width;
+
+            //r    x：列    y：行
+            data[(y*w+x)*4] = color[0];
+            //g
+            data[(y*w+x)*4+1] = color[1];
+            //b
+            data[(y*w+x)*4+2] = color[2];
+            //a
+            data[(y*w+x)*4+3] = color[3];
+        }
+    }
+</script>
+<body>
+    
+    <canvas id="test" width="300px" height="300px"></canvas>
+
+</body>
+</html>

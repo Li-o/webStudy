@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>马赛克</title>
+</head>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #test{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+</style>
+<script type="text/javascript">
+    window.onload = function(){
+        var cas = document.getElementById("test");
+        if(cas.getContext){
+            var pen = cas.getContext("2d");
+        }
+        var img = new Image();
+        img.src = "6.jpg";
+        img.onload = function(){
+            cas.width = img.width*2;
+            cas.height = img.height;
+            //pen.drawImage(img,0,0);
+            draw();
+        }
+
+
+        function draw(){
+            pen.drawImage(img,0,0);
+            var oldImage = pen.getImageData(0,0,img.width,img.height);
+            var newImage = pen.createImageData(img.width,img.height);
+            //打印输出照片宽
+            console.log(img.width,oldImage.width);
+
+            var size = 5;
+            for(var i=0;i<img.width/size;i++){
+                for(var j=0;j<img.height/size;j++){
+                    //获取5*5个像素里面随便一个像素
+                    var color = getPxInfo(oldImage,i*size+Math.floor(Math.random()*size),j*size+Math.floor(Math.random()*size));
+
+                    for(var a=0;a<size;a++){
+                        for(var b=0;b<size;b++){
+                            //将5*5的像素涂成随机取得那一个像素
+                            setPxInfo(newImage,i*size+a,j*size+b,color);
+                        }
+                    }
+                }
+            }
+            // ctx.clearRect(0,0,cas.width,cas.height);
+            // pen.putImageData(newImage,0,0);
+            pen.putImageData(newImage,img.width,0);
+        }
+        
+        //获取像素的颜色
+        function getPxInfo(imgdata,x,y){
+            var color = [];
+            var data = imgdata.data;
+            var h = imgdata.height;
+            var w = imgdata.width;
+            //r
+            color[0] = data[(y*w+x)*4];
+            //g
+            color[1] = data[(y*w+x)*4+1];
+            //b
+            color[2] = data[(y*w+x)*4+2];
+            //a
+            color[3] = data[(y*w+x)*4+3];
+            return color;
+        }
+        //修改某个位置像素颜色
+        function setPxInfo(imgdata,x,y,color){
+        
+            var data = imgdata.data;
+            var h = imgdata.height;
+            var w = imgdata.width;
+
+            //r    x：列    y：行
+            data[(y*w+x)*4] = color[0];
+            //g
+            data[(y*w+x)*4+1] = color[1];
+            //b
+            data[(y*w+x)*4+2] = color[2];
+            //a
+            data[(y*w+x)*4+3] = color[3];
+        }
+
+
+    }
+</script>
+<body>
+    
+    <canvas id="test"></canvas>
+
+</body>
+</html>

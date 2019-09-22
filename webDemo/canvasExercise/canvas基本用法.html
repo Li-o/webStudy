@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas基本用法</title>
+</head>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+        background: #f1f1f1;
+    }
+    #cas{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        background: #fff;
+    }
+</style>
+<script type="text/javascript">
+    window.onload = function(){
+        var canva = document.querySelector("#cas");
+        if(canva.getContext){
+            var pen = canva.getContext("2d");
+            pen.lineWidth = 25;
+            pen.lineJoin ="round";
+            //pen.fillRect(100,100,100,100);
+             pen.strokeRect(25,25,100,100);
+            
+        }
+    }
+</script>
+<body>
+    
+    <canvas id="cas" width="400px" height="400px"></canvas>
+
+</body>
+</html>

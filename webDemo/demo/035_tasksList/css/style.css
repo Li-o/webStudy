@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f1f1;
+}
+.middle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.task-list{
+    width: 400px;
+    padding: 40px;
+    background: url(/webDemo/demo/035_tasksList/img/1.jpg) no-repeat;
+    background-size: cover;
+}
+.task-list h2{
+    letter-spacing: 1em;
+    color: #f1f1f1;
+}
+.task{
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    cursor: pointer;
+}
+.task input{
+    position: absolute;
+    visibility: hidden;
+}
+.task i{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    text-align: center;
+    line-height: 48px;
+    font-size: 20px;
+    margin-right: 15px;
+    /* transparent透明 */
+    color: transparent;
+
+}
+.text{
+    font-size: 20px;
+    letter-spacing: 1em;
+    color: #f1f1f1;
+}
+.task input:checked ~ i{
+    color: #e74c3c;
+}
+.task input:checked ~ .text{
+    text-decoration: line-through;
+    color: #e74c3c;
+}

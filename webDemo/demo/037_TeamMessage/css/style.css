@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.team-section{
+    background: #f1f1f1;
+    text-align: center;
+}
+.inner-width{
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+    color: #333;
+    /* BFC */
+    overflow: hidden;
+}
+.team-section h1{
+    font-size: 20px;
+    display: inline-block;
+    border-bottom: 4px solid;
+    padding: 10px 0;
+    /* color: #e74c3c; */
+}
+.pe{
+    float: left;
+    /* calc() 函数用于动态计算长度值 */
+    width: calc(100% / 3);
+    overflow: hidden;
+    padding: 40px 0;
+    transition: 0.4s;
+}
+.pe:hover{
+    background: #ddd;
+}
+.pe img{
+    width: 120px;
+    height: 120px;
+}
+.p-name{
+    /* padding: 40px 0; */
+    margin: 16px 0;
+    /* color: #c0392b; */
+}
+.p-des{
+    margin: 10px 0;
+    font-style: oblique;
+    color: #e74c3c;
+}
+.p-sm a{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #333;
+    margin-top: 12px; 
+    padding: 0 5px;
+    transition: 0.5s;
+}
+.p-sm a:hover{
+    color: #e74c3c;
+    transform: scale(1.2);
+}
+
+@media screen and (max-width:600px){
+    .pe{
+        width: 100%;
+    }
+}

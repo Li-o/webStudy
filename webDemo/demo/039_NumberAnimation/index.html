@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计数器</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script src="https://cdn.bootcss.com/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+</head>
+<body>
+    
+    <div class="middle">
+        <div class="conunting-sec">
+            <div class="inner-width">
+                <div class="col">
+                    <i class="fa fa-cab"></i>
+                    <div class="num">123</div>
+                    出租车
+                </div>
+                
+                <div class="col">
+                    <i class="fa fa-bus"></i>
+                    <div class="num">456</div>
+                    公共汽车
+                </div>
+                
+                <div class="col">
+                    <i class="fa fa-truck"></i>
+                    <div class="num">789</div>
+                    货车
+                </div>
+                
+                <div class="col">
+                    <i class="fa fa-car"></i>
+                    <div class="num">1000</div>
+                    小轿车
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+    $(function(){
+        // jquery.countup.js是一款轻量级jquery数字动画插件。该数字动画插件可以在页面滚动时，将指定的数字从0开始计数增加动画
+        $(".num").counterUp({delay:10,time:1000});        
+    });
+    </script>
+</body>
+</html>

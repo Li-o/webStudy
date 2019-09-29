@@ -36,6 +36,7 @@
         var $box = $(".box");
         var $hex = $("#hex");
         // var color = $hex.val();
+        // console.log(color);
         //显示和隐藏输入框
         $btn.click(function(){
             $box.toggleClass("box-show");
@@ -43,14 +44,15 @@
 
         //预览颜色
         $hex.keyup(function(){
-            $prev.css("background",$hex.val());
+            var color = $hex.val();
+            $prev.css("background",color);
             // console.log($hex.val());
             // console.log(color);
         });
 
         //应用颜色
         $("button").click(function(){
-            $body.css("background",$hex.val());
+            $body.css("background",color);
             //隐藏box应用颜色
             $box.toggleClass("box-show");
         })

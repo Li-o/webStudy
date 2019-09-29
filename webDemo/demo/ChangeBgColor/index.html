@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>改变背景颜色</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    
+    <div class="btn"><i class="fa fa-cog"></i></div>
+
+    <div class="box">
+        <h2>输入颜色</h2>
+        <div class="box-c">
+            <div class="txtb">
+                <input type="text" id="hex" placeholder="#000000">
+                <div class="prev"></div>
+            </div>
+            <button class="apply">应用</button>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+    $(function(){
+        
+        var $prev = $(".prev");
+        var $body = $("body");
+        var $btn = $(".btn");
+        var $box = $(".box");
+        var $hex = $("#hex");
+        // var color = $hex.val();
+        //显示和隐藏输入框
+        $btn.click(function(){
+            $box.toggleClass("box-show");
+        });
+
+        //预览颜色
+        $hex.keyup(function(){
+            $prev.css("background",$hex.val());
+            // console.log($hex.val());
+            // console.log(color);
+        });
+
+        //应用颜色
+        $("button").click(function(){
+            $body.css("background",$hex.val());
+            //隐藏box应用颜色
+            $box.toggleClass("box-show");
+        })
+    })
+    </script>
+</body>
+</html>
